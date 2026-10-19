@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Carlos | Desarrollador Web & Tech Enthusiast</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de FontAwesome para redes y tecnología -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+    <div class="nav-container">
+        <!-- Reemplazamos el logo anterior por jc.sys -->
+        <a href="#" class="logo">
+            <img src="logo.png" alt="jc.sys logo" class="logo-img"> 
+            <!-- O si prefieres en texto puro con estilo: <span class="logo-text">jc.sys</span> -->
+        </a>
+        
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+    </header>
+
+    <main>
+        <!-- Sección Inicio / Hero -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <span class="badge">¡Hola! Mi nombre es</span>
+                <h1>Juan Carlos</h1>
+                <h2>Desarrollador Web & Apasionado por la Tecnología</h2>
+                <p>Construyo aplicaciones web modernas, limpias y funcionales. Enfocado en backend, desarrollo frontend y administración de sistemas.</p>
+                <div class="hero-btns">
+                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/jcexpineuxv2010-oss" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <!-- Usamos la opción de Gmail directo para que funcione al instante -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jc.espinozav.2010@gmail.com" target="_blank" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre mí -->
+        <section id="sobre-mi" class="section">
+            <h2 class="section-title">Sobre mí</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>Soy un estudiante y entusiasta de la informática orientado al desarrollo de software, la gestión de servidores y la resolución de problemas técnicos.</p>
+                    <p>Me gusta aprender constantemente nuevas tecnologías, optimizar sitios web y explorar herramientas de automatización y administración de sistemas Linux.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <section id="habilidades" class="section bg-alt">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-html5"></i>
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Maquetación semántica y diseño responsivo.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Lógica de cliente, manejo de DOM y Fetch API.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-php"></i>
+                    <h3>PHP / Backend</h3>
+                    <p>Procesamiento de formularios y conexión a base de datos.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-linux"></i>
+                    <h3>Linux & Servidores</h3>
+                    <p>Administración básica de servidores web y terminal.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <h3>Git & GitHub</h3>
+                    <p>Control de versiones y despliegue continuo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos" class="section">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                
+                <!-- Proyecto 1: Consultorio Psicológico Luz Ángeles -->
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3>Consultorio Psicológico Luz Ángeles</h3>
+                        <p>Sitio web profesional desarrollado para la gestión de servicios y contacto con pacientes, optimizado con diseño responsivo y estructura limpia.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>PHP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://jcexpineuxv2010-oss.github.io/-luz-angeles-official-v2.00.0/" target="_blank" class="btn-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: Resultados Simulacros UNI -->
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3>Resultados de Simulacros UNI</h3>
+                        <p>Plataforma web interactiva para consulta y visualización dinámica de puntajes y rendimientos en exámenes de simulación de admisión.</p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://jcexpineuxv2010-oss.github.io/resultados-simulacros-uni-v2.0.00/" target="_blank" class="btn-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section bg-alt">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <p>¿Tienes alguna consulta o proyecto en mente? ¡Escríbeme y lo conversamos!</p>
+                
+                <form class="contact-form" id="contact-form">
+                    <input type="text" id="form-nombre" placeholder="Tu nombre" required>
+                    <input type="email" id="form-email" placeholder="Tu correo electrónico" required>
+                    <input type="tel" id="form-telefono" placeholder="Tu teléfono" required>
+                    <textarea id="form-mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Juan Carlos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
