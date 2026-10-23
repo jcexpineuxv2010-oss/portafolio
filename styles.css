@@ -313,3 +313,90 @@ body {
     border-radius: 50%;
     object-fit: cover;
 }
+/* Contenedor del estado inferior */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   ESTILOS BASE (Modo Claro)
+   ========================================== */
+
+/* Estilo Amarillo / Ámbar */
+.status-badge.yellow {
+    background-color: #fefce8; /* Fondo amarillo muy suave */
+    color: #ca8a04;            /* Texto amarillo/dorado oscuro */
+    border: 1px solid #fef08a;  /* Borde fino amarillo */
+}
+
+/* Punto indicador amarillo */
+.status-badge .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #eab308; /* Color amarillo brillante */
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1.5s infinite ease-in-out;
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(0.85);
+    }
+}
+
+/* Estilo Verde / Green Badge (Sin parpadeo) */
+.status-badge.green {
+    background-color: #f0fdf4; 
+    color: #16a34a;            
+    border: 1px solid #bbf7d0;  
+}
+
+.status-badge.green .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e; /* Color verde */
+    border-radius: 50%;
+    display: inline-block;
+    animation: none; /* Sin animación para que quede estático */
+}
+
+
+/* ==========================================
+   ESTILOS PARA MODO OSCURO ([data-theme="dark"])
+   ========================================== */
+
+/* Insignia Amarilla en Modo Oscuro */
+[data-theme="dark"] .status-badge.yellow {
+    background-color: rgba(234, 179, 8, 0.15); /* Fondo oscuro con toque ámbar */
+    color: #fde047;                              /* Texto amarillo claro y nítido */
+    border: 1px solid rgba(234, 179, 8, 0.3);    /* Borde sutil oscuro */
+}
+
+[data-theme="dark"] .status-badge.yellow .dot {
+    background-color: #fde047;                   /* Punto amarillo brillante acorde al texto */
+}
+
+/* Insignia Verde en Modo Oscuro */
+[data-theme="dark"] .status-badge.green {
+    background-color: rgba(34, 197, 94, 0.15);   /* Fondo oscuro con toque verde */
+    color: #4ade80;                              /* Texto verde claro y nítido */
+    border: 1px solid rgba(34, 197, 94, 0.3);    /* Borde sutil oscuro */
+}
+
+[data-theme="dark"] .status-badge.green .dot {
+    background-color: #4ade80;                   /* Punto verde brillante acorde al texto */
+}
