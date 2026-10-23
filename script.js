@@ -30,7 +30,7 @@ if (themeToggleBtn) {
 
     themeToggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
-        
+
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
@@ -43,28 +43,43 @@ if (themeToggleBtn) {
     });
 }
 
-// 3. Redirección automática a Gmail con los datos del formulario
+// 3. Enviar el formulario al backend
 const contactForm = document.getElementById('contact-form');
+const BACKEND_URL = 'https://portafolio-backend-zde7.onrender.com';
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const nombre = document.getElementById('form-nombre').value;
-        const emailUsuario = document.getElementById('form-email').value;
-        const telefono = document.getElementById('form-telefono').value;
-        const mensaje = document.getElementById('form-mensaje').value;
+        const boton = contactForm.querySelector('button[type="submit"]');
+        const textoOriginal = boton.textContent;
+        boton.disabled = true;
+        boton.textContent = 'Enviando... (puede tardar hasta 1 minuto)';
 
-        const tuCorreo = 'jc.espinozav.2010@gmail.com';
-        
-        const asunto = encodeURIComponent(`Nuevo mensaje de contacto de: ${nombre}`);
-        
-        // Formato exacto solicitado
-        const cuerpo = encodeURIComponent(`Hola, te escribo desde la web de tu portafolio.\n\nNombre: ${nombre}\nCorreo: ${emailUsuario}\nTeléfono: ${telefono}\n\nMensaje:\n${mensaje}`);
+        const datos = {
+            nombre: document.getElementById('form-nombre').value,
+            email: document.getElementById('form-email').value,
+            telefono: document.getElementById('form-telefono').value,
+            mensaje: document.getElementById('form-mensaje').value
+        };
 
-        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${tuCorreo}&su=${asunto}&body=${cuerpo}`;
+        try {
+            const respuesta = await fetch(`${BACKEND_URL}/contacto`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            });
 
-        window.open(gmailUrl, '_blank');
-        contactForm.reset();
+            if (!respuesta.ok) throw new Error('Error del servidor');
+
+            alert('¡Mensaje enviado! Gracias por escribirme.');
+            contactForm.reset();
+        } catch (error) {
+            alert('No se pudo enviar el mensaje. Inténtalo de nuevo en un momento.');
+            console.error(error);
+        } finally {
+            boton.disabled = false;
+            boton.textContent = textoOriginal;
+        }
     });
 }
